@@ -6,12 +6,13 @@ import { Zoom } from "@mui/material";
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
 
-  const [note, setNote] = useState({
+  const [note, setNote] = useState({ //hook
     title: "",
     content: "",
   });
 
-  function handleChange(event) {
+  
+  function handleChange(event) { //taking input
     const { name, value } = event.target;
 
     setNote((prevNote) => {
@@ -22,7 +23,11 @@ function CreateArea(props) {
     });
   }
 
-  function submitNote(event) {
+  function submitNote(event) {  
+    event.preventDefault()
+    if(note.title.trim() === "" && note.content.trim() === ""){
+      return
+    }     
     props.onAdd(note);
     setNote({
       title: "",

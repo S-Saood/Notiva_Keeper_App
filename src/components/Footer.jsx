@@ -4,7 +4,7 @@ function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer>
-      <p>ⓒ {year} All rights reserved. Developed by XSMian</p>
+      <p>ⓒ {year} BiteX. All rights reserved.</p>
     </footer>
   );
 }
